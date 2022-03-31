@@ -52,7 +52,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       style: const TextStyle(color: Colors.black54),
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     height: 0,
                   )
                 ],
@@ -63,6 +63,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   pressed(int index) {
-      Navigator.pushNamed(context, mapbuild[index]['name']);
+      Navigator.pushNamed(context, mapbuild[index]['route']);
   }
 }

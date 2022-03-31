@@ -14,6 +14,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    return body();
+    /*
     return LayOut(
       appbar: true,
       drawer: true,
@@ -22,16 +24,15 @@ class _HomeState extends State<Home> {
       titleAppbar: 'Home',
       body: body(),
     );
+    */
   }
 
   body() {
-    return Container(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Publication();
-        },
-      ),
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Publication();
+      },
     );
   }
 }

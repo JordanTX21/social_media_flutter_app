@@ -12,19 +12,12 @@ class Favorite extends StatefulWidget {
 class _FavoriteState extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
-    return LayOut(
-      appbar: true,
-      drawer: true,
-      bottomnavigationbar: true,
-      floatingactionbutton: true,
-      titleAppbar: Favorite.name,
-      body: body(),
-    );
+    return body();
   }
 
   body() {
-    return Container(
-      
+    return Center(
+      child: Text(Favorite.name),
     );
   }
 }

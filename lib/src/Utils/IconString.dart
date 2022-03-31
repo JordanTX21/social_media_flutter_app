@@ -49,6 +49,7 @@ class IconString {
     "search": Icons.search,
     "favorite": Icons.favorite,
     "settings": Icons.settings,
+    "exit_to_app": Icons.exit_to_app,
   };
 
   static Icon getIcon(String nombreIcono) {

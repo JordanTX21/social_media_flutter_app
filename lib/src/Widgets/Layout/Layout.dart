@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter_app/src/Utils/MyColors.dart';
 import 'package:social_media_flutter_app/src/Widgets/Layout/Widgets/Drawer.dart';
 
 class LayOut extends StatefulWidget {
@@ -55,9 +56,9 @@ class _LayOutState extends State<LayOut> {
       elevation: 0,
       leading: widget.leading,
       centerTitle: false,
-      backgroundColor: widget.colorBar,
       title: Text(widget.titleAppbar ?? ''),
       actions: widget.menuButom,
+      backgroundColor: MyColors.primaryColor,
     );
   }
 
@@ -125,6 +126,7 @@ class _LayOutState extends State<LayOut> {
     return FloatingActionButton(
       onPressed: () {},
       child: const Icon(Icons.add_box),
+      backgroundColor: MyColors.primaryColor,
     );
   }
 }

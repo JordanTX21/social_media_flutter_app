@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:social_media_flutter_app/src/Widgets/Layout/Layout.dart';
 
-class Profile extends StatefulWidget {
-  static const String name = "Profile";
-  const Profile({Key? key}) : super(key: key);
+class Settings extends StatefulWidget {
+  static const String name = "Settings";
+  const Settings({Key? key}) : super(key: key);
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<Settings> createState() => _SettingsState();
 }
 
-class _ProfileState extends State<Profile> {
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return LayOut(
@@ -17,14 +17,14 @@ class _ProfileState extends State<Profile> {
       drawer: false,
       bottomnavigationbar: false,
       floatingactionbutton: false,
-      titleAppbar: Profile.name,
+      titleAppbar: Settings.name,
       body: body(),
     );
   }
 
   body() {
     return Center(
-      child: Text(Profile.name),
+      child: Text("Settings"),
     );
   }
 }

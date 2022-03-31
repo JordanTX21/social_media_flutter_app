@@ -12,6 +12,8 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
+    return body();
+    /*
     return LayOut(
       appbar: true,
       drawer: true,
@@ -20,11 +22,12 @@ class _SearchState extends State<Search> {
       titleAppbar: Search.name,
       body: body(),
     );
+     */
   }
 
   body() {
-    return Container(
-      
+    return Center(
+      child: Text("Search"),
     );
   }
 }

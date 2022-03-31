@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter_app/src/Utils/MyColors.dart';
 
 class MyDrawerHeader extends StatefulWidget {
   const MyDrawerHeader({Key? key}) : super(key: key);
@@ -11,17 +12,17 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
   @override
   Widget build(BuildContext context) {
     return DrawerHeader(
-      margin: EdgeInsets.all(0),
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 30, 119, 235),
+      margin: const EdgeInsets.all(0),
+      decoration: const BoxDecoration(
+        color:  MyColors.primaryColor,
       ),
       child: Column(
         children: [
           Row(
             children: [
               IconButton(
-                padding: EdgeInsets.only(right: 35.0, bottom: 30.0),
-                icon: Icon(
+                padding: const EdgeInsets.only(right: 35.0, bottom: 30.0),
+                icon: const Icon(
                   Icons.menu,
                   color: Colors.white,
                 ),

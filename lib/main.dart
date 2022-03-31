@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_flutter_app/src/Modules/Home/HomeLayout.dart';
+import 'package:social_media_flutter_app/src/Modules/Login/LoginLayout.dart';
 import 'package:social_media_flutter_app/src/Routes/Routes.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      initialRoute: Home.name,
+      initialRoute: Login.name,
       routes: Routes.rutes,
     );
   }
