@@ -8,6 +8,7 @@ class LayOut extends StatefulWidget {
   final bool appbar;
   final bool drawer;
   final bool bottomnavigationbar;
+  final Widget? mybootomnavigationbar;
   final bool floatingactionbutton;
   final List<Widget>? menuButom;
   final Color colorText;
@@ -26,7 +27,7 @@ class LayOut extends StatefulWidget {
       this.sizeTextTitle = 17,
       required this.drawer,
       this.menuButom,
-      this.leading})
+      this.leading, this.mybootomnavigationbar})
       : super(key: key);
 
   @override
@@ -42,7 +43,7 @@ class _LayOutState extends State<LayOut> {
       appBar: widget.appbar ? appBar() : null,
       body: widget.body,
       bottomNavigationBar:
-          widget.bottomnavigationbar ? bottomNavigationBar() : null,
+          widget.bottomnavigationbar ? bottomNavigationBar() : widget.mybootomnavigationbar,
       floatingActionButton:
           widget.floatingactionbutton ? floatingActionButton() : null,
       floatingActionButtonLocation: widget.floatingactionbutton

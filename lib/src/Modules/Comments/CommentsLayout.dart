@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:social_media_flutter_app/src/Modules/Home/Widgets/Publication.dart';
+import 'package:social_media_flutter_app/src/Modules/Comments/Widgets/Comment.dart';
 import 'package:social_media_flutter_app/src/Widgets/Layout/Layout.dart';
-import 'package:social_media_flutter_app/src/Widgets/Layout/Widgets/Drawer.dart';
 
-class Home extends StatefulWidget {
-  static const String name = "Home";
-  const Home({Key? key}) : super(key: key);
+class Comments extends StatefulWidget {
+  static const String name = "Comments";
+  const Comments({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Comments> createState() => _CommentsState();
 }
 
-class _HomeState extends State<Home> {
+class _CommentsState extends State<Comments> {
   ScrollController _scrollController = ScrollController();
   // ignore: prefer_final_fields
   RefreshController _refreshController =
@@ -43,7 +42,36 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return body();
+    return LayOut(
+      appbar: true,
+      drawer: false,
+      bottomnavigationbar: false,
+      floatingactionbutton: false,
+      titleAppbar: Comments.name,
+      body: body(),
+    );
+  }
+
+  bottomnavigationbar() {
+    return SizedBox(
+      child: ListTile(
+        leading: const CircleAvatar(
+          backgroundImage: NetworkImage(
+            'https://picsum.photos/200/300/?random',
+          ),
+        ),
+        title: const TextField(
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: 'Agrega un comentario...',
+          ),
+        ),
+        trailing: IconButton(
+          icon: const Icon(Icons.send),
+          onPressed: () {},
+        ),
+      ),
+    );
   }
 
   void _onRefresh() async {
@@ -70,18 +98,26 @@ class _HomeState extends State<Home> {
   }
 
   body() {
-    return SmartRefresher(
-        enablePullDown: true,
-        enablePullUp: true,
-        onRefresh: _onRefresh,
-        onLoading: _onLoading,
-        controller: _refreshController,
-        child: ListView.builder(
-          controller: _scrollController,
-          itemCount: length,
-          itemBuilder: (context, index) {
-            return Publication();
-          },
-        ));
+    return Column(
+      children: [
+        Expanded(
+          child: SmartRefresher(
+            enablePullDown: true,
+            enablePullUp: true,
+            onRefresh: _onRefresh,
+            onLoading: _onLoading,
+            controller: _refreshController,
+            child: ListView.builder(
+              controller: _scrollController,
+              itemCount: length,
+              itemBuilder: (BuildContext context, int index) {
+                return Comment();
+              },
+            ),
+          ),
+        ),
+        bottomnavigationbar(),
+      ],
+    );
   }
 }

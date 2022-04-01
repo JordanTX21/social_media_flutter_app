@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter_app/src/Modules/Comments/CommentsLayout.dart';
 import 'package:social_media_flutter_app/src/Modules/Favorite/FavoriteLayout.dart';
 import 'package:social_media_flutter_app/src/Modules/Home/HomeLayout.dart';
 import 'package:social_media_flutter_app/src/Modules/Login/LoginLayout.dart';
@@ -16,5 +17,6 @@ abstract class Routes {
     Favorite.name: (context) => const Favorite(),
     LayOutApp.name: (context) => const LayOutApp(),
     Settings.name: (context) => const Settings(),
+    Comments.name: (context) => const Comments(),
   };
 }
