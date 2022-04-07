@@ -49,8 +49,9 @@ class _LayOutAppState extends State<LayOutApp> {
     return AppBar(
       elevation: 0,
       centerTitle: false,
-      title: const Text('Layout'),
-      backgroundColor: MyColors.primaryColor,
+      title: const Text('Social Media App', style: TextStyle(fontWeight: FontWeight.bold)),
+      backgroundColor: Colors.transparent,
+      foregroundColor: Colors.black45,
     );
   }
 

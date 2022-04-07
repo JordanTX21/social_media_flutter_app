@@ -54,12 +54,15 @@ class _LayOutState extends State<LayOut> {
 
   appBar() {
     return AppBar(
-      elevation: 0,
       leading: widget.leading,
       centerTitle: false,
-      title: Text(widget.titleAppbar ?? ''),
+      title: Text(widget.titleAppbar ?? '',
+          style: const TextStyle(
+              fontWeight: FontWeight.bold)),
       actions: widget.menuButom,
-      backgroundColor: MyColors.primaryColor,
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      foregroundColor: Colors.black45,
     );
   }
 
