@@ -27,12 +27,13 @@ class _PublicationState extends State<Publication> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       margin: const EdgeInsets.all(15),
       elevation: 5,
+        shadowColor: MyColors.shadowColor,
       child: Column(
         children: <Widget>[
           ListTile(
             leading: const CircleAvatar(
               backgroundImage: NetworkImage(
-                  'http://martialartssystem.com/wp-content/themes/cera-child/assets/images/avatars/user-avatar.png'),
+                  'https://picsum.photos/200/300/?random'),
             ),
             title: const Text('UserName'),
             subtitle: Text(

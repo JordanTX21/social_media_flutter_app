@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter_app/src/Utils/MyColors.dart';
 
 class PublicationsViewer extends StatefulWidget {
   PublicationsViewer({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class _PublicationsViewerState extends State<PublicationsViewer>
         Container(
           child: TabBar(
             controller: _tabController,
+            indicatorColor: MyColors.primaryColor,
             tabs: const [
               Tab(
                 icon: Icon(Icons.square_rounded, color: Colors.black38),
@@ -34,7 +36,7 @@ class _PublicationsViewerState extends State<PublicationsViewer>
           ),
         ),
         SizedBox(
-          height: 80.0,
+          height: MediaQuery.of(context).size.height * 0.4,
           child: TabBarView(
             controller: _tabController,
             children: const <Widget>[

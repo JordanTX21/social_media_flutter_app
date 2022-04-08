@@ -54,7 +54,26 @@ class _LayOutState extends State<LayOut> {
 
   appBar() {
     return AppBar(
-      leading: widget.leading,
+      leading: Container(
+        margin: const EdgeInsets.all(8),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              MyColors.primaryColor,
+              MyColors.secondaryColor,
+            ],
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        child: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       centerTitle: false,
       title: Text(widget.titleAppbar ?? '',
           style: const TextStyle(
