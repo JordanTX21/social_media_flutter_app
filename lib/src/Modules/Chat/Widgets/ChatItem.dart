@@ -37,14 +37,14 @@ class _ChatItemState extends State<ChatItem> {
                 title: const Text(
                   'UserName',
                   style: TextStyle(
-                    color: Colors.black87,
+                    color: MyColors.primaryBlack,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 subtitle: const Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                   style: TextStyle(
-                    color: Colors.black38,
+                    color: MyColors.secondaryGray,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -53,7 +53,7 @@ class _ChatItemState extends State<ChatItem> {
                     const Text(
                       '12 min',
                       style: TextStyle(
-                        color: Colors.black26,
+                        color: MyColors.primaryGray,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

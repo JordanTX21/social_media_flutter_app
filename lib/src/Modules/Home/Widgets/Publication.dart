@@ -25,20 +25,28 @@ class _PublicationState extends State<Publication> {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.only(
+        left: 15,
+        right: 15,
+        top: 5,
+        bottom: 5,
+      ),
       elevation: 5,
-        shadowColor: MyColors.shadowColor,
+      shadowColor: MyColors.shadowColor,
       child: Column(
         children: <Widget>[
           ListTile(
             leading: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://picsum.photos/200/300/?random'),
+              backgroundImage:
+                  NetworkImage('https://picsum.photos/200/300/?random'),
             ),
-            title: const Text('UserName'),
-            subtitle: Text(
+            title: const Text('UserName',
+            style: TextStyle(
+                  color: MyColors.primaryBlack, fontWeight: FontWeight.bold),),
+            subtitle: const Text(
               '@username',
-              style: TextStyle(color: Colors.black.withOpacity(0.6)),
+              style: TextStyle(
+                  color: MyColors.secondaryGray, fontWeight: FontWeight.bold),
             ),
             trailing: IconButton(
               padding: const EdgeInsets.all(0),
@@ -52,7 +60,8 @@ class _PublicationState extends State<Publication> {
             padding: const EdgeInsets.all(15),
             child: const Text(
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              style: TextStyle(color: Colors.black54),
+              style: TextStyle(
+                  color: MyColors.secondaryGray, fontWeight: FontWeight.bold),
             ),
           ),
           CarouselSlider.builder(
@@ -116,17 +125,17 @@ class _PublicationState extends State<Publication> {
             child: Row(
               children: <Widget>[
                 IconButton(
-                  color: Colors.black26,
+                  color: MyColors.primaryGray,
                   tooltip: 'Fav',
                   icon: const Icon(Icons.favorite),
                   onPressed: () {},
                 ),
                 const Text(
                   '24',
-                  style: TextStyle(color: Colors.black38),
+                  style: TextStyle(color: MyColors.secondaryGray, fontWeight: FontWeight.bold),
                 ),
                 IconButton(
-                  color: Colors.black26,
+                  color: MyColors.primaryGray,
                   tooltip: 'Comment',
                   icon: const Icon(Icons.comment),
                   onPressed: () {
@@ -135,17 +144,17 @@ class _PublicationState extends State<Publication> {
                 ),
                 const Text(
                   '58',
-                  style: TextStyle(color: Colors.black38),
+                  style: TextStyle(color: MyColors.secondaryGray, fontWeight: FontWeight.bold),
                 ),
                 IconButton(
-                  color: Colors.black26,
+                  color: MyColors.primaryGray,
                   tooltip: 'Send',
                   icon: const Icon(Icons.send),
                   onPressed: () {},
                 ),
                 const Spacer(),
                 IconButton(
-                  color: Colors.black26,
+                  color: MyColors.primaryGray,
                   tooltip: 'Save',
                   icon: const Icon(Icons.bookmark),
                   onPressed: () {},

@@ -18,8 +18,8 @@ class _CommentState extends State<Comment> {
         margin: const EdgeInsets.only(
           left: 15,
           right: 15,
-          top: 10,
-          bottom: 10,
+          top: 5,
+          bottom: 5,
         ),
         elevation: 5,
         shadowColor: MyColors.shadowColor,
@@ -35,17 +35,22 @@ class _CommentState extends State<Comment> {
                     'https://picsum.photos/200/300/?random',
                   ),
                 ),
-                title: const Text('UserName'),
-                subtitle: Text(
+                title: const Text('UserName',
+                    style: TextStyle(
+                      color: MyColors.primaryBlack,
+                      fontWeight: FontWeight.bold,
+                    )),
+                subtitle: const Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                   style: TextStyle(
-                    color: Colors.black.withOpacity(0.6),
+                    color: MyColors.secondaryGray,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 trailing: IconButton(
                   padding: const EdgeInsets.all(0),
                   alignment: Alignment.centerRight,
-                  color: Colors.black26,
+                  color: MyColors.primaryGray,
                   tooltip: 'Fav',
                   icon: const Icon(Icons.favorite),
                   onPressed: () {},
@@ -58,12 +63,22 @@ class _CommentState extends State<Comment> {
                       left: 15,
                       right: 15,
                     ),
-                    child: const Text('2h ago',
-                        style: TextStyle(color: Colors.black38, fontSize: 12)),
+                    child: const Text(
+                      '2h ago',
+                      style: TextStyle(
+                        color: MyColors.primaryGray,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                   const Text('25',
-                      style: TextStyle(color: Colors.black38, fontSize: 12)),
-                  const Icon(Icons.favorite, color: Colors.black38, size: 15),
+                      style: TextStyle(
+                          color: MyColors.primaryGray,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold)),
+                  const Icon(Icons.favorite,
+                      color: MyColors.primaryGray, size: 15),
                   Container(
                     margin: const EdgeInsets.only(
                       left: 15,
@@ -72,8 +87,10 @@ class _CommentState extends State<Comment> {
                     child: TextButton(
                       onPressed: () {},
                       child: const Text('Responder',
-                          style:
-                              TextStyle(color: Colors.black38, fontSize: 12)),
+                          style: TextStyle(
+                              color: MyColors.primaryGray,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],

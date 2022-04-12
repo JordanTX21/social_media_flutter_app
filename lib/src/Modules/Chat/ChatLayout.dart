@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:social_media_flutter_app/src/Modules/Chat/Widgets/ChatItem.dart';
 import 'package:social_media_flutter_app/src/Utils/MyColors.dart';
-import 'package:social_media_flutter_app/src/Widgets/Layout/Layout.dart';
 
 class Chat extends StatefulWidget {
   static const String name = "Chat";
@@ -93,83 +92,93 @@ class _ChatState extends State<Chat> {
                     fontWeight: FontWeight.bold, color: Colors.grey[400])),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                top: 10,
-                bottom: 10,
-              ),
-              child: Text(
-                "Conectados",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.grey[400]),
-              ),
-            ),
-          ],
-        ),
-        Container(
-          margin: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-            top: 10,
-            bottom: 10,
-          ),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                friendConnected(),
-                friendConnected(),
-                friendConnected(),
-                friendConnected(),
-                friendConnected(),
-                friendConnected(),
-                friendConnected(),
-              ],
-            ),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                top: 10,
-                bottom: 10,
-              ),
-              child: Text(
-                "Chats",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.grey[400]),
-              ),
-            ),
-          ],
-        ),
         Expanded(
           child: SmartRefresher(
-            enablePullDown: true,
-            enablePullUp: true,
-            onRefresh: _onRefresh,
-            onLoading: _onLoading,
-            controller: _refreshController,
-            child: ListView.builder(
-              controller: _scrollController,
-              itemCount: length,
-              itemBuilder: (BuildContext context, int index) {
-                return ChatItem();
-              },
-            ),
-          ),
+              enablePullDown: true,
+              enablePullUp: true,
+              onRefresh: _onRefresh,
+              onLoading: _onLoading,
+              controller: _refreshController,
+              child: CustomScrollView(
+                controller: _scrollController,
+                slivers: <Widget>[
+                  SliverToBoxAdapter(
+                      child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              top: 10,
+                              bottom: 10,
+                            ),
+                            child: Text(
+                              "Conectados",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey[400]),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(
+                          left: 20,
+                          right: 20,
+                          top: 10,
+                          bottom: 10,
+                        ),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              friendConnected(),
+                              friendConnected(),
+                              friendConnected(),
+                              friendConnected(),
+                              friendConnected(),
+                              friendConnected(),
+                              friendConnected(),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              top: 10,
+                              bottom: 10,
+                            ),
+                            child: Text(
+                              "Chats",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey[400]),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return ChatItem();
+                      },
+                      childCount: length,
+                    ),
+                  ),
+                ],
+              )),
         ),
       ],
     );

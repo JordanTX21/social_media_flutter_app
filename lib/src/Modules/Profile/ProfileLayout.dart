@@ -140,7 +140,7 @@ class _ProfileState extends State<Profile> {
         margin: const EdgeInsets.only(top: 2.0),
         child: Text(title,
             style: const TextStyle(
-                color: Colors.black26, fontWeight: FontWeight.w500)),
+                color: MyColors.primaryGray, fontWeight: FontWeight.w500)),
       ),
       Container(
           margin: const EdgeInsets.only(top: 5.0),

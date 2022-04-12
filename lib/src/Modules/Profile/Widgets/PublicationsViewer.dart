@@ -28,10 +28,10 @@ class _PublicationsViewerState extends State<PublicationsViewer>
             indicatorColor: MyColors.primaryColor,
             tabs: const [
               Tab(
-                icon: Icon(Icons.square_rounded, color: Colors.black38),
+                icon: Icon(Icons.square_rounded, color: MyColors.secondaryGray),
               ),
-              Tab(icon: Icon(Icons.video_library, color: Colors.black38)),
-              Tab(icon: Icon(Icons.save_rounded, color: Colors.black38)),
+              Tab(icon: Icon(Icons.video_library, color: MyColors.secondaryGray)),
+              Tab(icon: Icon(Icons.save_rounded, color: MyColors.secondaryGray)),
             ],
           ),
         ),

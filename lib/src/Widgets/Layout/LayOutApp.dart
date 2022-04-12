@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:social_media_flutter_app/src/Modules/Chat/ChatLayout.dart';
 import 'package:social_media_flutter_app/src/Modules/Favorite/FavoriteLayout.dart';
 import 'package:social_media_flutter_app/src/Modules/Home/HomeLayout.dart';
@@ -83,7 +84,7 @@ class _LayOutAppState extends State<LayOutApp> {
         ],
       ),
       centerTitle: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: MyColors.backgroundColor,
       foregroundColor: Colors.black45,
     );
   }
@@ -105,7 +106,7 @@ class _LayOutAppState extends State<LayOutApp> {
           children: <Widget>[
             const Spacer(),
             IconButton(
-              color: _selectedItem == 'Home' ? Colors.black54 : Colors.black26,
+              color: _selectedItem == 'Home' ? Colors.black54 : MyColors.primaryGray,
               tooltip: 'Home',
               icon: const Icon(Icons.home),
               onPressed: () {
@@ -119,7 +120,7 @@ class _LayOutAppState extends State<LayOutApp> {
             const Spacer(),
             IconButton(
               color:
-                  _selectedItem == 'Search' ? Colors.black54 : Colors.black26,
+                  _selectedItem == 'Search' ? Colors.black54 : MyColors.primaryGray,
               tooltip: 'Search',
               icon: const Icon(Icons.search),
               onPressed: () {
@@ -135,7 +136,7 @@ class _LayOutAppState extends State<LayOutApp> {
             const Spacer(),
             IconButton(
               color:
-                  _selectedItem == 'Favorite' ? Colors.black54 : Colors.black26,
+                  _selectedItem == 'Favorite' ? Colors.black54 : MyColors.primaryGray,
               tooltip: 'Favorite',
               icon: const Icon(Icons.favorite),
               onPressed: () {
@@ -149,7 +150,7 @@ class _LayOutAppState extends State<LayOutApp> {
             const Spacer(),
             IconButton(
               color:
-                  _selectedItem == 'Chat' ? Colors.black54 : Colors.black26,
+                  _selectedItem == 'Chat' ? Colors.black54 : MyColors.primaryGray,
               tooltip: 'Chat',
               icon: const Icon(Icons.chat_bubble_rounded),
               onPressed: () {

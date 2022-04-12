@@ -102,7 +102,7 @@ class _LayOutState extends State<LayOut> {
           children: <Widget>[
             const Spacer(),
             IconButton(
-              color: Colors.black26,
+              color: MyColors.primaryGray,
               tooltip: 'Home',
               icon: const Icon(Icons.home),
               onPressed: () {
@@ -111,7 +111,7 @@ class _LayOutState extends State<LayOut> {
             ),
             const Spacer(),
             IconButton(
-              color: Colors.black26,
+              color: MyColors.primaryGray,
               tooltip: 'Search',
               icon: const Icon(Icons.search),
               onPressed: () {
@@ -122,7 +122,7 @@ class _LayOutState extends State<LayOut> {
             const Spacer(),
             const Spacer(),
             IconButton(
-              color: Colors.black26,
+              color: MyColors.primaryGray,
               tooltip: 'Favorite',
               icon: const Icon(Icons.favorite),
               onPressed: () {
@@ -131,7 +131,7 @@ class _LayOutState extends State<LayOut> {
             ),
             const Spacer(),
             IconButton(
-              color: Colors.black26,
+              color: MyColors.primaryGray,
               tooltip: 'Profile',
               icon: const Icon(Icons.person),
               onPressed: () {
